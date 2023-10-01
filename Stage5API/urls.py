@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import video_list, create_video, get_video
+from . import views
 
 urlpatterns = [
-    path('videos/', video_list, name='video_list'),
-    path('videos/create/', create_video, name='create_video'),
-    path('videos/<int:pk>/', get_video, name='get_video'),
+    path('api/start-stream/', views.start_stream, name='start-stream'),
+    path('api/stop-stream/', views.stop_stream, name='stop-stream'),
 ]
